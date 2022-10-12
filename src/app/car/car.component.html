@@ -12,6 +12,7 @@
                         <th scope="col">car_model_year</th>
                         <th scope="col">car_vin</th>
                         <th scope="col"> price</th>
+                        <th scope="col"> Availability</th>
                        
                     </tr>
                 </thead>
@@ -25,7 +26,14 @@
                         <td>{{i.car_model_year}}</td>
                         <td>{{i.car_vin}}</td>
                         <td>{{i.price}}</td>
-                    </tr>
+                        <td *ngIf="i.availability"><div class="alert alert-success" role="alert">
+                           True
+                          </div></td>
+                          <td *ngIf="! i.availability"><div class="alert alert-danger" role="alert">
+                           False
+                          </div></td>
+                         
+                        </tr>
                     
                 </tbody>
             </table>
